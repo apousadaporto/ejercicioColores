@@ -1,3 +1,61 @@
 /* ********* */
 /* @VARIABLES */
 /* ********* */
+
+// Colores
+
+$colorTexto: #8d8e93;
+
+$coloresVerdes: (
+  planos: (
+    superoscuro: #2c5271,
+    oscuro: #509a9d,
+    medio: #70c197,
+    normal: #93df9a,
+    suave: #d5f2d3,
+  ),
+  degradados: (
+    degradado1: #315c78,
+    degradado2: #488e9a,
+    degradado3: #55a29e,
+    degradado4: #6bb899,
+    degradado5: #8cda97,
+    degradado6: #78c69b,
+    degradado7: #83d39a,
+    degradado8: #5da49d,
+    degradado9: #c4e9c9,
+    degradado10: #82c7a1,
+  ),
+);
+
+// Circulo
+.circulo1 {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(
+    to right,
+    map-get(map-get($coloresVerdes, degradados), degradado1),
+    map-get(map-get($coloresVerdes, degradados), degradado2)
+  );
+}
+
+@for $i from 1 through 5 {
+  .circulo#{$i} {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(
+      to right,
+      map-get(map-get($coloresVerdes, degradados), degradado#{$i}),
+      map-get(map-get($coloresVerdes, degradados), degradado#{$i + 1})
+    );
+  }
+}
+
+// Rectangulo
+.rectangulo1 {
+    width: 100px;
+    height: 150px;
+    background: map-get(map-get($coloresVerdes, planos), superoscuro);
+  }

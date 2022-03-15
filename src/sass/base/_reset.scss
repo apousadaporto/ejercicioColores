@@ -1,3 +1,8 @@
 /* ********* */
 /* @RESET */
 /* ********* */
+
+// Al poner padding no aumentará el tamaño de las cajas
+*{
+    box-sizing: border-box;
+}
